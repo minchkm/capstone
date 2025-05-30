@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_card1"
+    android:padding="24dp"
+    android:gravity="center_horizontal">
+
+    <!-- 로그아웃 아이콘 -->
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_logout"
+        android:contentDescription="로그아웃"
+        android:tint="#fff"
+        android:layout_marginBottom="14dp"/>
+
+    <!-- 타이틀 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="로그아웃 하시겠어요?"
+        android:textColor="#fff"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- 설명 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="현재 계정에서 로그아웃됩니다."
+        android:textColor="#B0B0B0"
+        android:textSize="13sp"
+        android:gravity="center"
+        android:layout_marginBottom="18dp"/>
+
+    <!-- 버튼 영역 -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="취소"
+            android:textColor="#fff"
+            android:backgroundTint="#2C333A"
+            android:layout_marginEnd="8dp"/>
+
+        <Button
+            android:id="@+id/btn_logout"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="로그아웃"
+            android:textColor="#fff"
+            android:backgroundTint="#E53935"/>
+    </LinearLayout>
+</LinearLayout>

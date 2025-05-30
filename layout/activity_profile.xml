@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#181B1F">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="28dp"
+        android:gravity="center_horizontal">
+
+        <!-- 프로필 이미지 -->
+        <ImageView
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:src="@drawable/ic_profile_default"
+            android:background="@drawable/bg_circle_gray"
+            android:contentDescription="프로필"
+            android:layout_marginBottom="14dp"/>
+
+        <!-- 이름 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="홍길동 님"
+            android:textColor="#fff"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="2dp"/>
+
+        <!-- 이메일 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="email@gmail.com"
+            android:textColor="#B0B0B0"
+            android:textSize="14sp"
+            android:layout_marginBottom="22dp"/>
+
+        <!-- 총 누적 구독 금액 카드 -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#23262B"
+            android:padding="18dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="6dp"
+            android:gravity="center_vertical"
+            android:backgroundTint="#23262B"
+            android:elevation="2dp"
+            android:clipToPadding="false"
+            android:clipChildren="false">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_money"
+                    android:layout_marginEnd="10dp"
+                    android:contentDescription="구독 금액"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="총 누적 구독 금액"
+                    android:textColor="#fff"
+                    android:textSize="15sp"
+                    android:layout_marginEnd="10dp"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="₩342,000"
+                android:textColor="#fff"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="4dp"/>
+        </LinearLayout>
+
+        <!-- 현재 구독 중인 앱 수 카드 -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#23262B"
+            android:padding="18dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center_vertical"
+            android:backgroundTint="#23262B"
+            android:elevation="2dp"
+            android:clipToPadding="false"
+            android:clipChildren="false">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_apps"
+                android:layout_marginEnd="10dp"
+                android:contentDescription="앱 수"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="현재 구독 중인 앱 수"
+                android:textColor="#fff"
+                android:textSize="15sp"
+                android:layout_marginEnd="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="7개"
+                android:textColor="#fff"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:layout_gravity="end"/>
+        </LinearLayout>
+
+        <!-- 내 알림 설정 -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#23262B"
+            android:padding="18dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center_vertical"
+            android:backgroundTint="#23262B"
+            android:elevation="2dp"
+            android:clipToPadding="false"
+            android:clipChildren="false">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_alarm"
+                android:layout_marginEnd="10dp"
+                android:contentDescription="알림"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="내 알림 설정"
+                android:textColor="#fff"
+                android:textSize="15sp"
+                android:layout_marginEnd="10dp"/>
+
+            <Switch
+                android:id="@+id/switch_alarm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"/>
+        </LinearLayout>
+
+        <!-- 문의/피드백 -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#23262B"
+            android:padding="18dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center_vertical"
+            android:backgroundTint="#23262B"
+            android:elevation="2dp"
+            android:clipToPadding="false"
+            android:clipChildren="false">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="문의 / 피드백"
+                android:textColor="#fff"
+                android:textSize="15sp"/>
+        </LinearLayout>
+
+        <!-- 로그아웃 -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#23262B"
+            android:padding="18dp"
+            android:gravity="center_vertical"
+            android:backgroundTint="#23262B"
+            android:elevation="2dp"
+            android:clipToPadding="false"
+            android:clipChildren="false"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="로그아웃"
+                android:textColor="#fff"
+                android:textSize="15sp"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
