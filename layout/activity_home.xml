@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#2C3036"
     android:orientation="vertical"
-    android:padding="16dp">
+
+    android:paddingTop="16dp"
+    android:paddingBottom="0dp">
 
     <!-- 상단 프로필 영역 -->
     <LinearLayout
@@ -12,6 +16,8 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
         android:paddingTop="8dp"
         android:paddingBottom="8dp">
 
@@ -55,6 +61,8 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp">
 
@@ -138,11 +146,23 @@
         </LinearLayout>
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
     <!-- 달력 -->
     <CalendarView
         android:id="@+id/calendarView"
         android:layout_width="match_parent"
         android:layout_height="321dp"
+
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:background="#23262C"
@@ -156,7 +176,107 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:background="@android:color/transparent"/>
+    </LinearLayout>
+    <LinearLayout
+
+        android:id="@+id/bottomButtonBar"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="#1E2328"
+        android:elevation="8dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingHorizontal="0dp"
+        android:layout_marginStart="-16dp"
+        android:layout_marginEnd="-16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!--   android:background="@drawable/btn_background" 아이콘의 배경 색 밑 radius이용         -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_background"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <!-- 아이콘 색상 변경 코드   -->
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/home"
+                app:tint="#ffffff" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_background"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+
+            <ImageView
+                android:id="@+id/btnRanking"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/leaderboard"
+                app:tint="#666666" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_background"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/btnAppUsage"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/timer"
+                app:tint="#666666" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginHorizontal="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_background"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/btnMyPage"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/user"
+                app:tint="#666666" />
+        </LinearLayout>
+
+    </LinearLayout>
 </LinearLayout>
