@@ -1,10 +1,15 @@
-package com.example.gudasi; // ← 앱 패키지에 맞게 수정
+package com.project.gudasi; // ← 앱 패키지에 맞게 수정
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class HomeActivity extends AppCompatActivity {
@@ -19,6 +24,37 @@ public class HomeActivity extends AppCompatActivity {
         ImageView btnRanking = findViewById(R.id.btnRanking);  // 수정: 래퍼 LinearLayout에도 ID 추가
         ImageView btnAppUsage = findViewById(R.id.btnAppUsage);
         ImageView btnMyPage = findViewById(R.id.btnMyPage);
+
+        DBHelper dbHelper = new DBHelper(this);
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM user", null);
+
+        if (cursor != null && cursor.moveToFirst()) {
+            int nameIndex = cursor.getColumnIndex("name");
+            int emailIndex = cursor.getColumnIndex("email");
+
+            if (nameIndex != -1 && emailIndex != -1) {
+                String name = getIntent().getStringExtra("name");
+                String email = getIntent().getStringExtra("email");
+
+                TextView userName = findViewById(R.id.userName);
+                userName.setText(name);
+
+                //TextView userEmail = findViewById(R.id.userEmail);
+                //userEmail.setText(email);
+
+                // 예: photo URL을 Glide로 불러오고 싶다면 아래 코드 추가 가능
+                // ImageView userPhoto = findViewById(R.id.userPhoto);
+                // Glide.with(this).load(photo).into(userPhoto);
+            } else {
+                Log.e("DB_ERROR", "컬럼 인덱스를 찾을 수 없습니다.");
+            }
+        } else {
+            Toast.makeText(this, "사용자 정보가 없습니다.", Toast.LENGTH_SHORT).show();
+        }
+
+        if (cursor != null) cursor.close();
+        db.close();
 
         btnHome.setOnClickListener(new View.OnClickListener() {
             @Override

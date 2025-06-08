@@ -1,10 +1,10 @@
-package com.example.gudasi; // ← 앱 패키지에 맞게 수정
+package com.project.gudasi; // ← 앱 패키지에 맞게 수정
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class UsageStatsActivity extends AppCompatActivity {
