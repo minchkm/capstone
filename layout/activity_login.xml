@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#2C3036"
+    android:gravity="center_horizontal"
+    android:padding="0dp">
+
+
+
+    <ImageView
+        android:id="@+id/titleImage"
+        android:layout_width="334dp"
+        android:layout_height="87dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="32dp"
+        android:contentDescription="구다시 구독 관리"
+        android:src="@drawable/title_gudasi" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- 구글 공식 로그인 버튼 -->
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/sign_in_button"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="30dp" />
+
+    <!-- 안내 텍스트 -->
+    <TextView
+        android:id="@+id/descText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="구독 계정으로 연동하세요.\n로그인 후 구독 정보와 결제 내역을 확인할 수 있습니다."
+        android:textColor="#B0B0B0"
+        android:textSize="13sp"
+        android:gravity="center"
+        android:layout_marginBottom="50dp"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"/>
+</LinearLayout>

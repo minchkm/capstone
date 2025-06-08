@@ -237,10 +237,11 @@
 
             <!-- 아이콘 색상 변경 코드   -->
             <ImageView
+                android:id="@+id/btnHome"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:src="@drawable/home"
-                app:tint="#ffffff" />
+                app:tint="#666666" />
         </LinearLayout>
 
         <LinearLayout
@@ -280,7 +281,7 @@
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:src="@drawable/timer"
-                app:tint="#666666" />
+                app:tint="#ffffff" />
         </LinearLayout>
 
         <LinearLayout

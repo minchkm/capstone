@@ -184,7 +184,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#262B32"
-            android:gravity="space_between"
             android:orientation="horizontal"
             android:padding="16dp">
 
@@ -289,6 +288,7 @@
 
                 <!-- 아이콘 색상 변경 코드   -->
                 <ImageView
+                    android:id="@+id/btnHome"
                     android:layout_width="32dp"
                     android:layout_height="32dp"
                     android:src="@drawable/home"

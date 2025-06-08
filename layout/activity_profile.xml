@@ -194,24 +194,25 @@
 
         <!-- 로그아웃 -->
         <LinearLayout
-            android:orientation="horizontal"
+            android:id="@+id/logoutLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             android:background="#23262B"
-            android:padding="18dp"
-            android:gravity="center_vertical"
             android:backgroundTint="#23262B"
-            android:elevation="2dp"
-            android:clipToPadding="false"
             android:clipChildren="false"
-            android:layout_marginBottom="10dp">
+            android:clipToPadding="false"
+            android:elevation="2dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="18dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="로그아웃"
                 android:textColor="#fff"
-                android:textSize="15sp"/>
+                android:textSize="15sp" />
         </LinearLayout>
     </LinearLayout>
     </ScrollView>
@@ -245,10 +246,11 @@
 
             <!-- 아이콘 색상 변경 코드   -->
             <ImageView
+                android:id="@+id/btnHome"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:src="@drawable/home"
-                app:tint="#ffffff" />
+                app:tint="#666666" />
         </LinearLayout>
 
         <LinearLayout
@@ -308,7 +310,7 @@
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:src="@drawable/user"
-                app:tint="#666666" />
+                app:tint="#ffffff" />
         </LinearLayout>
 
     </LinearLayout>
