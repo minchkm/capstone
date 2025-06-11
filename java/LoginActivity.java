@@ -77,16 +77,14 @@ public class LoginActivity extends AppCompatActivity {
                         if (user != null) {
                             String name = user.getDisplayName();
                             String email = user.getEmail();
-                            String uid = user.getUid();
 
                             // SQLite에 저장
                             DBHelper dbHelper = new DBHelper(this);
-                            dbHelper.insertUser(uid, name, email);
+                            dbHelper.insertUser(name, email);
 
                             // 메인 화면으로 이동
 
                             Intent intent = new Intent(LoginActivity.this, ConnectedActivity.class);
-                            intent.putExtra("uid", uid);
                             intent.putExtra("name", name);
                             intent.putExtra("email", email);
                             startActivity(intent);

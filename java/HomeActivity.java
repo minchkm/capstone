@@ -11,6 +11,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -26,26 +30,22 @@ public class HomeActivity extends AppCompatActivity {
         ImageView btnMyPage = findViewById(R.id.btnMyPage);
 
         DBHelper dbHelper = new DBHelper(this);
+        List<Subscription> subscriptions = dbHelper.getAllSubscriptions();
+        RecyclerView recyclerView = findViewById(R.id.subscriptionRecyclerView);
+        SubscriptionAdapter adapter = new SubscriptionAdapter(this, subscriptions);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM user", null);
 
         if (cursor != null && cursor.moveToFirst()) {
             int nameIndex = cursor.getColumnIndex("name");
-            int emailIndex = cursor.getColumnIndex("email");
 
-            if (nameIndex != -1 && emailIndex != -1) {
-                String name = getIntent().getStringExtra("name");
-                String email = getIntent().getStringExtra("email");
+            if (nameIndex != -1) {
+                String name = cursor.getString(nameIndex); // DB에서 직접 가져오기
 
                 TextView userName = findViewById(R.id.userName);
                 userName.setText(name);
-
-                //TextView userEmail = findViewById(R.id.userEmail);
-                //userEmail.setText(email);
-
-                // 예: photo URL을 Glide로 불러오고 싶다면 아래 코드 추가 가능
-                // ImageView userPhoto = findViewById(R.id.userPhoto);
-                // Glide.with(this).load(photo).into(userPhoto);
             } else {
                 Log.e("DB_ERROR", "컬럼 인덱스를 찾을 수 없습니다.");
             }
@@ -61,7 +61,6 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(HomeActivity.this, HomeActivity.class);
                 startActivity(intent);
-                finish(); // 현재 액티비티 종료 (선택)
             }
         });
 
@@ -70,7 +69,6 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(HomeActivity.this, RankingActivity.class);
                 startActivity(intent);
-                finish(); // 현재 액티비티 종료 (선택)
             }
         });
 
@@ -79,7 +77,6 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(HomeActivity.this, UsageStatsActivity.class);
                 startActivity(intent);
-                finish();
             }
         });
 
@@ -88,7 +85,6 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
                 startActivity(intent);
-                finish();
             }
         });
     }
