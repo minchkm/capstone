@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "7544480607",
+    "project_id": "gudasi-48a6a",
+    "storage_bucket": "gudasi-48a6a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:7544480607:android:9476a625c1069e45608cea",
+        "android_client_info": {
+          "package_name": "com.project.gudasi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "7544480607-b8qklc6v7l6dmkumq9950pe3gnqrt4sm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.project.gudasi",
+            "certificate_hash": "0da736526aa4a4e01c2928dca50106335645535c"
+          }
+        },
+        {
+          "client_id": "7544480607-rnecj6qhvb2if72ev46vp64liot6kk38.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4ongYlXtBfq9Sb7y9uQd1H4leqZ3NMpc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "7544480607-rnecj6qhvb2if72ev46vp64liot6kk38.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
