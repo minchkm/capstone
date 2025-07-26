@@ -35,7 +35,5 @@ Firebase 설정 → 서비스 계정 탭 →
 ✅ 3-1. 필요한 라이브러리 설치
 터미널에서 아래 명령어 실행
 
-bash
-복사
-편집
+
 pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib firebase-admin
